@@ -34,15 +34,17 @@ const OsController = {
     },
     deletarOrdem: (req, res) => {
         const { id } = req.params;
-
+    
         OsModel.deletar(id, (err, results) => {
             if (err) {
                 res.status(500).send('Erro ao deletar ordem de serviço');
             } else {
-                res.send('Ordem de serviço deletada com sucesso');
+                // Apenas enviar um status 204 para indicar que foi bem sucedido, sem corpo na resposta
+                res.status(204).send(); // ou res.sendStatus(204)
             }
         });
     }
+    
 };
 
 module.exports = OsController;

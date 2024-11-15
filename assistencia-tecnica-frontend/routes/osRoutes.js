@@ -13,6 +13,6 @@ router.get('/', OsController.listarOrdens);
 router.put('/:id', OsController.atualizarOrdem);
 
 // Deletar ordem de serviço
-router.delete('/:id', OsController.deletarOrdem);
+router.delete('/ordens-servico/:id', OsController.deletarOrdem);
 
 module.exports = router;

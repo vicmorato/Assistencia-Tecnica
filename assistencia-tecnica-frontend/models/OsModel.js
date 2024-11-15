@@ -3,7 +3,7 @@ const db = require('../config/db');
 const OsModel = {
     criar: (dados, callback) => {
         const query = 'INSERT INTO ordens_servico (cliente, aparelho, problema, status) VALUES (?, ?, ?, ?)';
-        db.query(query, [dados.cliente, dados.aparelho, dados.problema, 'Aberto'], (err, results) => {
+        db.query(query, [dados.nome, dados.aparelho, dados.descricao, 'Aberto'], (err, results) => {
             callback(err, results);
         });
     },

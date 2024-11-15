@@ -1,8 +1,7 @@
-/* src/styles.css */
-
 /* Importando as fontes */
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Syncopate:wght@400;700&display=swap');
 
 /* Variáveis de cores e texturas */
 :root {
@@ -14,59 +13,226 @@
     --noise-texture: url(https://i.gyazo.com/a26366e538851a5c569ff648e99b7fd4.png);
 }
 
-/* Estilos gerais do body */
+*{
+    font-family: "Afacad Flux", sans-serif;
+  
+}
+
+
 body {
-    background-color: #000; /* Fundo preto */
-    background-image: url('https://i.gyazo.com/e752c54603cc6d5df799db7f6e3c7c24.png'); /* Imagem de fundo com padrão de circuito */
-    background-size: cover; /* Faz com que a imagem cubra toda a tela */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    margin: 0;
+    font-family: "Afacad Flux", sans-serif;
+    background-color: #ffffff; /* Fundo branco */
+    color: #000000; /* Texto preto */
+}
+
+/* Estilo do container principal */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilo do menu */
+.menu-container {
+    background-color: #20232c; /* Fundo escuro para o menu */
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #000252;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #000252;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Estilo da área de conteúdo */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff; /* Fundo branco para o restante da página */
+}
+
+/* Estilo da página inicial */
+.home-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+
+.promo-content {
+    max-width: 800px;
+}
+
+.promo-content {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo da imagem do celular */
+.phone-container {
+    position: relative;
+    z-index: 2; /* Garante que a imagem fique à frente do texto */
+}
+.promo-phone {
+    width: 400px; /* Tamanho da imagem do celular */
+    transition: transform 0.3s ease-in-out; /* Transição suave para o efeito flutuante */
+}
+
+
+/* Efeito flutuante na imagem ao passar o mouse */
+.promo-phone:hover {
+    transform: translateY(-15px) scale(1.05); /* Eleva e aumenta levemente a imagem */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra para o efeito */
 }
 
 
 
 /* Container principal */
 .container {
-    width: 100%;
-    max-width: 1200px; /* Limita a largura máxima em telas grandes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333; /* Fundo levemente mais claro para o formulário */
     padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+input, label {
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444; /* Input em cor neutra */
+    color: rgb(255, 255, 255);
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
 }
 
 /* Estilos para o título */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
-h1 {
-    font-family: 'Montserrat', sans-serif; /* Usando a fonte Montserrat */
+header h1 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    color: #d4d4d4; /* Cor do texto */
-    font-size: 3rem; /* Tamanho da fonte */
-    letter-spacing: 2px; /* Espaçamento entre letras */
-    text-transform: uppercase; /* Letras maiúsculas */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destaque */
-    margin-bottom: 20px; /* Margem inferior para espaçamento */
+    color: #d4d4d4;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
 }
 
-h1 span {
-    display: block; /* Faz com que cada parte do título fique em linha separada */
+/* Estilos para o menu */
+nav.menu {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-h1 span:first-child {
-    font-size: 3.5rem; /* Tamanho maior para a primeira parte */
+nav.menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-h1 span:last-child {
-    font-size: 2.5rem; /* Tamanho um pouco menor para a segunda parte */
-    margin-top: 5px; /* Reduzir a margem superior para aproximar */
+nav.menu ul li {
+    display: inline-block;
 }
 
+nav.menu ul li a {
+    text-decoration: none;
+    color: #ece0c8;
+    background-color: #555a57;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
 
+nav.menu ul li a:hover {
+    background-color: #949993;
+}
+
+/* Estilos para o conteúdo */
+.conteudo {
+    margin-top: 20px;
+}
+
+.phone-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    position: relative;
+}
+
+.phone {
+    width: 400px;
+    height: auto;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.phone:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.phone::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: -1;
+    opacity: 0;
+}
+
+.phone:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
 
 /* Estilos para o formulário */
 form {
@@ -75,59 +241,6 @@ form {
     margin-bottom: 20px;
 }
 
-/* Estilo para o botão Registrar OS */
-button.register-os {
-    position: relative;
-    height: 100px; /* Altura do botão */
-    width: 300px; /* Largura do botão */
-    font-size: 1.5rem; /* Tamanho do texto */
-    font-family: sans-serif; /* Fonte do texto */
-    color: white; /* Cor do texto */
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem borda */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    overflow: hidden; /* Para esconder o efeito de hover */
-    will-change: transform; /* Para otimizar animações */
-}
-
-/* Efeito antes do botão */
-button.register-os::before,
-button.register-os::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    display: block;
-    background-color: deeppink; /* Cor do efeito */
-    transition: all 250ms ease-in-out; /* Transição suave */
-}
-
-/* Estilo do efeito vertical */
-button.register-os::before {
-    width: 2px;
-    height: 100%; /* Altura total do botão */
-    box-shadow: 298px 0 deeppink; /* Sombra lateral */
-}
-
-/* Estilo do efeito horizontal */
-button.register-os::after {
-    height: 2px;
-    width: 100%; /* Largura total do botão */
-    box-shadow: 0 98px deeppink; /* Sombra superior */
-}
-
-/* Efeito ao passar o mouse */
-button.register-os:hover::before {
-    left: -10px; /* Movendo o efeito para a esquerda */
-    box-shadow: 318px 0 deeppink; /* Aumentando a sombra lateral */
-}
-
-button.register-os:hover::after {
-    top: -10px; /* Movendo o efeito para cima */
-    box-shadow: 0 118px deeppink; /* Aumentando a sombra superior */
-}
-
-/* Estilos para o formulário */
 form label {
     margin-top: 10px;
     margin-bottom: 5px;
@@ -135,7 +248,6 @@ form label {
     font-weight: bold;
 }
 
-form input,
 form textarea {
     padding: 10px;
     border: 1px solid #555;
@@ -145,159 +257,238 @@ form textarea {
     margin-bottom: 10px;
 }
 
-/* Estilos para a lista de ordens de serviço */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    background-color: #2e2e2e;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #555;
-    color: #d4d4d4;
-}
-
-ul li:nth-child(even) {
-    background-color: #333;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
     .container {
         width: 90%;
     }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    button.register-os {
-        font-size: 1rem; /* Ajuste de tamanho para responsividade */
-    }
-
-    ul li {
-        font-size: 0.9rem;
-    }
 }
-form button {
-    padding: 10px 20px; /* Aumentar o padding para um botão mais "gordo" */
-    background-color: transparent; /* Fundo transparente para um efeito VHS */
-    color: #d4d4d4; /* Cor do texto que combine com o fundo */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Borda clara e suave */
-    border-radius: 4px; /* Bordas levemente arredondadas */
+/* Estilo principal para a página */
+.app-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+}
+
+h1 {
+    font-size: 24px;
+    color: #000252;
+}
+
+/* Menu estilizado */
+.menu-container {
+    background: linear-gradient(135deg, #78d9ff, #007bff);
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 20px;
+    background-color: #000000;
+    flex-grow: 1;
+}
+
+.container {
+    backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, #78d9ff, #007bff); /* Degradê de azul escuro para azul claro */
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 100px auto; /* Centraliza a div */
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fafafa;
+    color: rgb(24, 182, 255);
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+p {
+    text-align: center;
+    margin-top: -10px;
+}
+
+.registrarOS{
+    width: 300px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #f046cb);
     cursor: pointer;
-    font-size: 1rem; /* Tamanho da fonte */
-    transition: all 0.3s ease; /* Transição suave para os efeitos de hover */
-    position: relative; /* Para o efeito de hover */
-    overflow: hidden; /* Para esconder o efeito de sombra */
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
 }
 
-/* Efeito de hover */
-form button:hover {
-    color: #000; /* Muda a cor do texto ao passar o mouse */
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais escuro e leve ao passar o mouse */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7); /* Efeito de sombra mais suave */
+.registrarOS:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 500%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.registrarOS:active {
+    color: #000
 }
 
-form button:after {
-    content: ''; /* Adiciona um pseudo-elemento após o botão */
-    position: absolute; /* Posiciona absolutamente em relação ao botão */
-    left: 50%; /* Alinha ao centro */
-    top: 50%; /* Alinha ao centro */
-    width: 300%; /* Aumenta o tamanho */
-    height: 300%; /* Aumenta o tamanho */
-    background: rgba(255, 255, 255, 0.1); /* Cor de fundo leve para o efeito */
-    border-radius: 50%; /* Bordas arredondadas */
-    transition: all 0.5s ease; /* Transição suave */
-    transform: translate(-50%, -50%) scale(0); /* Inicia como invisível */
-    z-index: 0; /* Coloca atrás do botão */
+.registrarOS:active:after {
+    background: transparent;
 }
 
-/* Efeito de animação ao passar o mouse */
-form button:hover:after {
-    transform: translate(-50%, -50%) scale(1); /* Aumenta o tamanho */
-}
-/* Estilização dos rótulos dos campos */
-form label {
-    display: block; /* Cada rótulo ocupa uma linha */
-    margin-bottom: 5px; /* Espaçamento entre o rótulo e o campo */
-    color: #d4d4d4; /* Cor do texto dos rótulos */
-    font-weight: bold; /* Texto em negrito para destaque */
-}
-
-/* Estilização dos campos de entrada */
-form input[type="text"], form textarea {
-    width: 100%; /* Largura total do contêiner */
-    padding: 10px; /* Espaçamento interno */
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente escuro */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Borda clara e suave */
-    border-radius: 4px; /* Bordas levemente arredondadas */
-    color: #d4d4d4; /* Cor do texto */
-    font-size: 1rem; /* Tamanho da fonte */
-    transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
-}
-
-/* Efeito de foco nos campos de entrada */
-form input[type="text"]:focus, form textarea:focus {
-    border-color: #fff; /* Muda a cor da borda para branca no foco */
-    outline: none; /* Remove o contorno padrão */
-    background-color: rgba(255, 255, 255, 0.2); /* Escurece o fundo no foco */
-}
-
-/* Estilização específica para textarea */
-form textarea {
-    resize: none; /* Impede o redimensionamento do textarea */
-    height: 100px; /* Altura fixa para o textarea */
-}
-
-.phone-container {
-    display: flex; /* Usar flexbox para centralizar a imagem */
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-top: 40px; /* Espaço acima da imagem */
-    position: relative; /* Para efeitos adicionais */
-}
-
-.phone {
-    width: 400px; /* Ajuste o tamanho da imagem do aparelho */
-    height: auto; /* Mantém a proporção da imagem */
-    transition: transform 0.3s ease; /* Transição suave */
-    position: relative; /* Para posicionar o pseudo-elemento */
-    z-index: 1; /* Garante que a imagem fique acima do círculo */
-}
-
-.phone:hover {
-    transform: translateY(-10px) scale(1.05); /* Move para cima e aumenta o tamanho */
-}
-
-/* Pseudo-elemento para o efeito de luz circular */
-.phone::after {
-    content: ''; /* Necessário para o pseudo-elemento */
-    position: absolute; /* Posiciona em relação ao pai */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    width: 300%; /* Tamanho do círculo */
-    height: 300%; /* Tamanho do círculo */
-    background: rgba(255, 255, 255, 0.3); /* Cor e opacidade da luz */
-    border-radius: 50%; /* Faz com que o fundo seja circular */
-    transform: translate(-50%, -50%) scale(0); /* Inicia como invisível */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave */
-    z-index: -1; /* Coloca o círculo atrás da imagem */
-    opacity: 0; /* Inicia invisível */
-}
-
-.phone:hover::after {
-    transform: translate(-50%, -50%) scale(1); /* Expande o círculo ao passar o mouse */
-    opacity: 1; /* Faz o círculo aparecer */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .phone {
-        width: 250px; /* Reduz o tamanho da imagem em telas menores */
-    }
+.registrarOS:hover:before {
+    opacity: 1;
 }
 
 
+.registrarOS:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+
+.botao-deletar{
+    width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  gap: 1px;
+}
+
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+
+  .botao-deletar:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+    gap: 0;
+  }
+
+  .botao-deletar:hover .bin-bottom {
+    width: 50px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+  }
+
+  .bin-top {
+    transform-origin: bottom right;
+  }
+  .botao-deletar:hover .bin-top {
+    width: 50px;
+    transition-duration: 0.3s;
+    transform: translateY(60%) rotate(160deg);
+  }
+
+  .botao-deletar::before {
+  position: absolute;
+  top: -20px;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.botao-deletar:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(35px);
+    transition-duration: 0.3s;
+  }
